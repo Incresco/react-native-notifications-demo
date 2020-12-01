@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:bundle": "cd android && ./gradlew assembleRelease -PMYAPP_UPLOAD_STORE_PASSWORD='android' -PMYAPP_UPLOAD_KEY_PASSWORD='android'",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",

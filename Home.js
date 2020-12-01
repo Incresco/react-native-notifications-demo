@@ -26,6 +26,10 @@ class Home extends Component {
         completion: (response: NotificationCompletion) => void,
       ) => {
         console.log('Notification Received - Foreground', notification.payload);
+        Notifications.postLocalNotification({
+          title: notification.payload['gcm.notification.title'],
+          body: notification.payload['gcm.notification.body'],
+        });
 
         // Calling completion on iOS with `alert: true` will present the native iOS inApp notification.
         completion({alert: true, sound: true, badge: false});
